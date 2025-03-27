@@ -10,133 +10,14 @@
     <h2 class="text-center">Búsqueda de Expedientes en Acordadas</h2>
 
     <div class="mb-3">
-        <label for="numeroAcordada" class="form-label">Número de Acordada:</label>
-        <input type="text" id="numeroAcordada" class="form-control" placeholder="Ejemplo: 36/25">
+        <label for="numeroExpediente" class="form-label">Número de Expediente:</label>
+        <input type="text" id="numeroExpediente" class="form-control" placeholder="Ejemplo: 12345/23">
     </div>
 
     <div class="mb-3">
-        <label for="juzgadoSeleccionado" class="form-label">Seleccionar Juzgado(s):</label>
-        <select id="juzgadoSeleccionado" class="form-control" multiple>
-            <!-- Juzgado de Documentos y Locaciones -->
-            <option value="JD1">Juzgado de Documentos y Locaciones - I NOMINACIÓN</option>
-            <option value="JD2">Juzgado de Documentos y Locaciones - II NOMINACIÓN</option>
-            <option value="JD3">Juzgado de Documentos y Locaciones - III NOMINACIÓN</option>
-            <option value="JD4">Juzgado de Documentos y Locaciones - IV NOMINACIÓN</option>
-            <option value="JD5">Juzgado de Documentos y Locaciones - V NOMINACIÓN</option>
-            <option value="JD6">Juzgado de Documentos y Locaciones - VI NOMINACIÓN</option>
-            <option value="JD7">Juzgado de Documentos y Locaciones - VII NOMINACIÓN</option>
-            <option value="JD8">Juzgado de Documentos y Locaciones - VIII NOMINACIÓN</option>
-            <option value="JD9">Juzgado de Documentos y Locaciones - IX NOMINACIÓN</option>
-            <!-- Gestión Asociada Documentos y Locaciones -->
-            <option value="GEAD1">GEAD 1</option>
-            <option value="GEAD2">GEAD 2</option>
-            <option value="GEAD3">GEAD 3</option>
-            <!-- Juzgado Civil y Comercial Común -->
-            <option value="JCCC1">Juzgado Civil y Comercial Común - I NOMINACIÓN</option>
-            <option value="JCCC2">Juzgado Civil y Comercial Común - II NOMINACIÓN</option>
-            <option value="JCCC3">Juzgado Civil y Comercial Común - III NOMINACIÓN</option>
-            <option value="JCCC4">Juzgado Civil y Comercial Común - IV NOMINACIÓN</option>
-            <option value="JCCC5">Juzgado Civil y Comercial Común - V NOMINACIÓN</option>
-            <option value="JCCC6">Juzgado Civil y Comercial Común - VI NOMINACIÓN</option>
-            <option value="JCCC7">Juzgado Civil y Comercial Común - VII NOMINACIÓN</option>
-            <option value="JCCC8">Juzgado Civil y Comercial Común - VIII NOMINACIÓN</option>
-            <option value="JCCC9">Juzgado Civil y Comercial Común - IX NOMINACIÓN</option>
-            <option value="JCCC10">Juzgado Civil y Comercial Común - X NOMINACIÓN</option>
-            <option value="JCCC11">Juzgado Civil y Comercial Común - XI NOMINACIÓN</option>
-            <option value="JCCC12">Juzgado Civil y Comercial Común - XII NOMINACIÓN</option>
-            <option value="JCCC13">Juzgado Civil y Comercial Común - XIII NOMINACIÓN</option>
-            <option value="JCCC14">Juzgado Civil y Comercial Común - XIV NOMINACIÓN</option>
-            <!-- Gestión Asociada Civil y Comercial Común -->
-            <option value="GEACC1">GEACC 1</option>
-            <option value="GEACC2">GEACC 2</option>
-            <option value="GEACC3">GEACC 3</option>
-            <option value="GEACC4">GEACC 4</option>
-            <!-- Juzgado del Trabajo -->
-            <option value="JT1">Juzgado del Trabajo - I NOMINACIÓN</option>
-            <option value="JT2">Juzgado del Trabajo - II NOMINACIÓN</option>
-            <option value="JT3">Juzgado del Trabajo - III NOMINACIÓN</option>
-            <option value="JT4">Juzgado del Trabajo - IV NOMINACIÓN</option>
-            <option value="JT5">Juzgado del Trabajo - V NOMINACIÓN</option>
-            <option value="JT6">Juzgado del Trabajo - VI NOMINACIÓN</option>
-            <option value="JT7">Juzgado del Trabajo - VII NOMINACIÓN</option>
-            <option value="JT8">Juzgado del Trabajo - VIII NOMINACIÓN</option>
-            <option value="JT9">Juzgado del Trabajo - IX NOMINACIÓN</option>
-            <option value="JT10">Juzgado del Trabajo - X NOMINACIÓN</option>
-            <option value="JT11">Juzgado del Trabajo - XI NOMINACIÓN</option>
-            <option value="JT12">Juzgado del Trabajo - XII NOMINACIÓN</option>
-            <!-- Gestión Asociada del Trabajo -->
-            <option value="GEAT1">GEAT 1</option>
-            <option value="GEAT2">GEAT 2</option>
-            <option value="GEAT3">GEAT 3</option>
-            <!-- Juzgado de Familia y Sucesiones -->
-            <option value="JFS1">Juzgado de Familia y Sucesiones - I NOMINACIÓN</option>
-            <option value="JFS2">Juzgado de Familia y Sucesiones - II NOMINACIÓN</option>
-            <option value="JFS3">Juzgado de Familia y Sucesiones - III NOMINACIÓN</option>
-            <option value="JFS4">Juzgado de Familia y Sucesiones - IV NOMINACIÓN</option>
-            <option value="JFS5">Juzgado de Familia y Sucesiones - V NOMINACIÓN</option>
-            <option value="JFS6">Juzgado de Familia y Sucesiones - VI NOMINACIÓN</option>
-            <option value="JFS7">Juzgado de Familia y Sucesiones - VII NOMINACIÓN</option>
-            <option value="JFS8">Juzgado de Familia y Sucesiones - VIII NOMINACIÓN</option>
-            <option value="JFS9">Juzgado de Familia y Sucesiones - IX NOMINACIÓN</option>
-            <option value="JFS10">Juzgado de Familia y Sucesiones - X NOMINACIÓN</option>
-            <option value="JFS11">Juzgado de Familia y Sucesiones - XI NOMINACIÓN</option>
-            <option value="JFS12">Juzgado de Familia y Sucesiones - XII NOMINACIÓN</option>
-            <option value="JFS13">Juzgado de Familia y Sucesiones - XIII NOMINACIÓN</option>
-            <!-- Gestión Asociada de Familia -->
-            <option value="GEAF1">GEAF 1</option>
-            <option value="GEAF2">GEAF 2</option>
-            <option value="GEAF3">GEAF 3</option>
-            <option value="GEAF4">GEAF 4</option>
-            <option value="GEAF5">GEAF 5</option>
-            <!-- Gestión Asociada de Sucesiones -->
-            <option value="GEAS1">GEAS 1</option>
-            <!-- CJE - Juzgado de Familia y Sucesiones -->
-            <option value="CJE-JFS1">CJE - Juzgado de Familia y Sucesiones - I NOMINACIÓN</option>
-            <option value="CJE-JFS2">CJE - Juzgado de Familia y Sucesiones - II NOMINACIÓN</option>
-            <option value="CJE-JFS3">CJE - Juzgado de Familia y Sucesiones - III NOMINACIÓN</option>
-            <!-- CJE - Gestión Asociada de Familia -->
-            <option value="CJE-GEAF1">CJE - GEAF 1</option>
-            <!-- Juzgado de Cobros y Apremios -->
-            <option value="JCA1">Juzgado de Cobros y Apremios - I NOMINACIÓN</option>
-            <option value="JCA2">Juzgado de Cobros y Apremios - II NOMINACIÓN</option>
-            <!-- Gestión Asociada de Cobros y Apremios -->
-            <option value="GEACA1">GEACA 1</option>
-            <!-- CJC - Juzgado del Trabajo -->
-            <option value="CJC-JT1">CJC - Juzgado del Trabajo - I NOMINACIÓN</option>
-            <option value="CJC-JT2">CJC - Juzgado del Trabajo - II NOMINACIÓN</option>
-            <option value="CJC-JT3">CJC - Juzgado del Trabajo - III NOMINACIÓN</option>
-            <!-- CJC - Gestión Asociada del Trabajo -->
-            <option value="CJC-GEAT1">CJC - GEAT 1</option>
-            <!-- CJC - Juzgado de Familia y Sucesiones -->
-            <option value="CJC-JFS1">CJC - Juzgado de Familia y Sucesiones - I NOMINACIÓN</option>
-            <option value="CJC-JFS2">CJC - Juzgado de Familia y Sucesiones - II NOMINACIÓN</option>
-            <option value="CJC-JFS3">CJC - Juzgado de Familia y Sucesiones - III NOMINACIÓN</option>
-            <option value="CJC-JFS4">CJC - Juzgado de Familia y Sucesiones - IV NOMINACIÓN</option>
-            <!-- CJC - Gestión Asociada de Familia -->
-            <option value="CJC-GEAF1">CJC - GEAF 1</option>
-            <!-- CJC - Juzgado de Documentos y Locaciones -->
-            <option value="CJC-JD1">CJC - Juzgado de Documentos y Locaciones - I NOMINACIÓN</option>
-            <option value="CJC-JD2">CJC - Juzgado de Documentos y Locaciones - II NOMINACIÓN</option>
-            <option value="CJC-JD3">CJC - Juzgado de Documentos y Locaciones - III NOMINACIÓN</option>
-            <!-- CJC - Gestión Asociada de Documentos y Locaciones -->
-            <option value="CJC-GEAD1">CJC - GEAD 1</option>
-            <!-- CJC - Juzgado de Cobros y Apremios -->
-            <option value="CJC-JCA1">CJC - Juzgado de Cobros y Apremios - I NOMINACIÓN</option>
-            <option value="CJC-JCA2">CJC - Juzgado de Cobros y Apremios - II NOMINACIÓN</option>
-            <!-- CJC - Juzgado de Civil y Comercial Común -->
-            <option value="CJC-JCCC1">CJC - Juzgado de Civil y Comercial Común - I NOMINACIÓN</option>
-            <option value="CJC-JCCC2">CJC - Juzgado de Civil y Comercial Común - II NOMINACIÓN</option>
-            <option value="CJC-JCCC3">CJC - Juzgado de Civil y Comercial Común - III NOMINACIÓN</option>
-            <!-- CJC - Gestión Asociada de Civil y Comercial Común -->
-            <option value="CJC-GEACC1">CJC - GEACC 1</option>
-            <!-- CJM - Juzgado Civil y Comercial Común -->
-            <option value="CJM-JCCC1">CJM - Juzgado Civil y Comercial Común - I NOMINACIÓN</option>
-            <!-- CJM - Juzgado del Trabajo -->
-            <option value="CJM-JT1">CJM - Juzgado del Trabajo - I NOMINACIÓN</option>
-            <!-- CJM - Juzgado de Documentos y Locaciones -->
-            <option value="CJM-JD1">CJM - Juzgado de Documentos y Locaciones - I NOMINACIÓN</option>
-            <!-- CJM - Gestión Asociada de Multi Fueros -->
-            <option value="CJM-GEAMF1">CJM - GEAMF 1</option>
+        <label for="acordadaSeleccionada" class="form-label">Seleccionar Acordada:</label>
+        <select id="acordadaSeleccionada" class="form-control">
+            <!-- Opciones de acordadas se llenarán automáticamente -->
         </select>
     </div>
 
@@ -146,15 +27,35 @@
     <pre id="resultado" class="border p-3 bg-light"></pre>
 
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Cargar acordadas desde la página externa
+            fetch('https://www.justucuman.gov.ar/procesosdedestruccion')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, 'text/html');
+                    const acordadas = Array.from(doc.querySelectorAll('.acordada-item')).map(item => item.textContent.trim());
+
+                    const acordadaSeleccionada = document.getElementById('acordadaSeleccionada');
+                    acordadas.forEach(acordada => {
+                        const option = document.createElement('option');
+                        option.value = acordada;
+                        option.textContent = acordada;
+                        acordadaSeleccionada.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error al cargar las acordadas:', error));
+        });
+
         document.getElementById('buscar').addEventListener('click', function() {
             try {
-                const numeroAcordada = document.getElementById('numeroAcordada').value;
-                const juzgadosSeleccionados = Array.from(document.getElementById('juzgadoSeleccionado').selectedOptions).map(option => option.text);
+                const numeroExpediente = document.getElementById('numeroExpediente').value;
+                const acordadaSeleccionada = document.getElementById('acordadaSeleccionada').value;
 
-                console.log('Número de Acordada:', numeroAcordada);
-                console.log('Juzgados Seleccionados:', juzgadosSeleccionados);
+                console.log('Número de Expediente:', numeroExpediente);
+                console.log('Acordada Seleccionada:', acordadaSeleccionada);
 
-                const resultados = buscarAcordadas(numeroAcordada, juzgadosSeleccionados);
+                const resultados = buscarExpedientes(numeroExpediente, acordadaSeleccionada);
                 console.log('Resultados:', resultados);
 
                 document.getElementById('resultado').textContent = resultados || 'No se encontraron resultados.';
@@ -164,19 +65,19 @@
             }
         });
 
-        function buscarAcordadas(numeroAcordada, juzgadosSeleccionados) {
-            // Simulación de datos de acordadas
-            const acordadas = [
-                'JUZGADO DEL TRABAJO - VI NOMINACIÓN CAPITAL - Acordada n°: 243/23',
-                'JUZGADO DEL TRABAJO - VI NOMINACIÓN CAPITAL - Acordada n°: 248/23',
-                // Agrega más acordadas aquí si es necesario
+        function buscarExpedientes(numeroExpediente, acordadaSeleccionada) {
+            // Simulación de datos de expedientes
+            const expedientes = [
+                'Expediente 12345/23 - JUZGADO DEL TRABAJO - VI NOMINACIÓN CAPITAL - Acordada n°: 243/23',
+                'Expediente 67890/23 - JUZGADO DEL TRABAJO - VI NOMINACIÓN CAPITAL - Acordada n°: 248/23',
+                // Agrega más expedientes aquí si es necesario
             ];
 
-            // Filtrar acordadas dependiendo del número y juzgado seleccionado
-            return acordadas.filter(acordada => {
-                const juzgadoCoincide = juzgadosSeleccionados.some(juzgado => acordada.includes(juzgado));
-                const acordadaCoincide = acordada.includes(numeroAcordada);
-                return juzgadoCoincide && acordadaCoincide;
+            // Filtrar expedientes dependiendo del número de expediente y acordada seleccionada
+            return expedientes.filter(expediente => {
+                const expedienteCoincide = expediente.includes(numeroExpediente);
+                const acordadaCoincide = expediente.includes(acordadaSeleccionada);
+                return expedienteCoincide && acordadaCoincide;
             }).join('\n');
         }
     </script>
