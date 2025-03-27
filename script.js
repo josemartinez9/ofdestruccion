@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar acordadas desde el archivo JSON en el repositorio
-    fetch('https://api.github.com/repos/josemartinez9/ofdestruccion/contents/acordadas.json?ref=main')
+    fetch('https://raw.githubusercontent.com/josemartinez9/ofdestruccion/main/acordadas.json')
         .then(response => response.json())
-        .then(data => {
-            const content = atob(data.content);
-            const acordadas = JSON.parse(content);
-
+        .then(acordadas => {
             const acordadaSeleccionada = document.getElementById('acordadaSeleccionada');
             acordadas.forEach(acordada => {
                 const option = document.createElement('option');
