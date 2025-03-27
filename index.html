@@ -150,7 +150,13 @@
             try {
                 const numeroAcordada = document.getElementById('numeroAcordada').value;
                 const juzgadosSeleccionados = Array.from(document.getElementById('juzgadoSeleccionado').selectedOptions).map(option => option.text);
+
+                console.log('Número de Acordada:', numeroAcordada);
+                console.log('Juzgados Seleccionados:', juzgadosSeleccionados);
+
                 const resultados = buscarAcordadas(numeroAcordada, juzgadosSeleccionados);
+                console.log('Resultados:', resultados);
+
                 document.getElementById('resultado').textContent = resultados || 'No se encontraron resultados.';
             } catch (error) {
                 console.error('Error al buscar expedientes:', error);
@@ -168,7 +174,9 @@
 
             // Filtrar acordadas dependiendo del número y juzgado seleccionado
             return acordadas.filter(acordada => {
-                return juzgadosSeleccionados.some(juzgado => acordada.includes(juzgado)) && acordada.includes(numeroAcordada);
+                const juzgadoCoincide = juzgadosSeleccionados.some(juzgado => acordada.includes(juzgado));
+                const acordadaCoincide = acordada.includes(numeroAcordada);
+                return juzgadoCoincide && acordadaCoincide;
             }).join('\n');
         }
     </script>
