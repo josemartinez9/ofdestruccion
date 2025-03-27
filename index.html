@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Búsqueda de Expedientes</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+    <h2 class="text-center">Búsqueda de Expedientes en Acordadas</h2>
+
+    <div class="mb-3">
+        <label for="numeroAcordada" class="form-label">Número de Acordada:</label>
+        <input type="text" id="numeroAcordada" class="form-control" placeholder="Ejemplo: 36/25">
+    </div>
+
+    <div class="mb-3">
+        <label for="juzgadoSeleccionado" class="form-label">Seleccionar Juzgado:</label>
+        <select id="juzgadoSeleccionado" class="form-control">
+            <option value="GEACC1">Juzgado Civil y Comercial - I NOMINACIÓN CONCEPCIÓN</option>
+            <option value="GEACC3">Juzgado Civil y Comercial - VIII NOMINACIÓN CONCEPCIÓN</option>
+            <option value="GEACC3">Juzgado Civil y Comercial - III NOMINACIÓN CONCEPCIÓN</option>
+            <option value="Monteros1">Juzgado Civil y Comercial - I NOMINACIÓN MONTEROS</option>
+            <option value="MonterosLab">Juzgado del Trabajo - I NOMINACIÓN MONTEROS</option>
+        </select>
+    </div>
+
+    <button id="buscar" class="btn btn-primary">Buscar Expedientes</button>
+
+    <h3 class="mt-4">Resultados:</h3>
+    <pre id="resultado" class="border p-3 bg-light"></pre>
+
+    <script src="script.js"></script>
+</body>
+</html>
