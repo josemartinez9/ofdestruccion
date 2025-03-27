@@ -145,6 +145,26 @@
     <h3 class="mt-4">Resultados:</h3>
     <pre id="resultado" class="border p-3 bg-light"></pre>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('buscar').addEventListener('click', function() {
+            const numeroAcordada = document.getElementById('numeroAcordada').value;
+            const juzgadosSeleccionados = Array.from(document.getElementById('juzgadoSeleccionado').selectedOptions).map(option => option.text);
+            const resultados = buscarAcordadas(numeroAcordada, juzgadosSeleccionados);
+            document.getElementById('resultado').textContent = resultados;
+        });
+
+        function buscarAcordadas(numeroAcordada, juzgadosSeleccionados) {
+            // Simulación de datos de acordadas
+            const acordadas = [
+                'JUZGADO DEL TRABAJO - VI NOMINACIÓN CAPITAL - Acordada n°: 248/23',
+                // Agrega más acordadas aquí
+            ];
+
+            // Filtrar acordadas dependiendo del número y juzgado seleccionado
+            return acordadas.filter(acordada => {
+                return juzgadosSeleccionados.some(juzgado => acordada.includes(juzgado)) && acordada.includes(numeroAcordada);
+            }).join('\n');
+        }
+    </script>
 </body>
 </html>
