@@ -32,7 +32,8 @@
             fetch('https://api.github.com/repos/josemartinez9/ofdestruccion/contents/acordadas.json')
                 .then(response => response.json())
                 .then(data => {
-                    const acordadas = JSON.parse(atob(data.content));
+                    const content = atob(data.content);
+                    const acordadas = JSON.parse(content);
 
                     const acordadaSeleccionada = document.getElementById('acordadaSeleccionada');
                     acordadas.forEach(acordada => {
