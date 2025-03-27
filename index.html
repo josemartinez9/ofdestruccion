@@ -29,7 +29,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Cargar acordadas desde el archivo JSON en el repositorio
-            fetch('https://api.github.com/repos/josemartinez9/ofdestruccion/contents/acordadas.json')
+            fetch('https://api.github.com/repos/josemartinez9/ofdestruccion/contents/acordadas.json?ref=main')
                 .then(response => response.json())
                 .then(data => {
                     const content = atob(data.content);
