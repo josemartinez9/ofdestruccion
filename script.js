@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Cargar acordadas desde el archivo JSON en el repositorio
     fetch('https://raw.githubusercontent.com/josemartinez9/ofdestruccion/main/acordadas.json')
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar las acordadas');
+            }
+            return response.json();
+        })
         .then(acordadas => {
             const acordadaSeleccionada = document.getElementById('acordadaSeleccionada');
             acordadas.forEach(acordada => {
