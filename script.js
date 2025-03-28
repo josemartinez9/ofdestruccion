@@ -113,18 +113,97 @@ document.getElementById('buscar').addEventListener('click', function() {
     const acordadaSeleccionada = document.getElementById('acordadaSeleccionada').value;
     const resultado = document.getElementById('resultado');
 
-    // Aquí se debería implementar la lógica para buscar el expediente en el documento PDF o XLSX
-    // Por ahora, solo simulamos el resultado
-    const simulatedResults = [
-        { expediente: '12345/23', data: 'Datos del expediente 12345/23 en la acordada seleccionada' },
-        { expediente: '67890/23', data: 'Datos del expediente 67890/23 en la acordada seleccionada' }
-    ];
-
-    const found = simulatedResults.find(item => item.expediente === numeroExpediente && acordadaSeleccionada.includes(item.expediente.split('/')[1]));
-
-    if (found) {
-        resultado.textContent = found.data;
-    } else {
-        resultado.textContent = 'No se encontraron resultados.';
-    }
+    // Fetch and parse the corresponding document (PDF or XLSX)
+    fetchDocument(acordadaSeleccionada)
+        .then(documentData => {
+            const searchResult = searchExpedienteInDocument(documentData, numeroExpediente);
+            resultado.textContent = searchResult || 'No se encontraron resultados.';
+        })
+        .catch(error => {
+            console.error('Error al buscar expedientes:', error);
+            resultado.textContent = 'Ocurrió un error al buscar los expedientes.';
+        });
 });
+
+function fetchDocument(acordada) {
+    return new Promise((resolve, reject) => {
+        // Determine the document type and URL based on the selected acordada
+        const documentUrl = getDocumentUrl(acordada);
+        const documentType = getDocumentType(documentUrl);
+
+        if (documentType === 'pdf') {
+            parsePdfDocument(documentUrl).then(resolve).catch(reject);
+        } else if (documentType === 'xlsx') {
+            parseXlsxDocument(documentUrl).then(resolve).catch(reject);
+        } else {
+            reject('Unsupported document type');
+        }
+    });
+}
+
+function getDocumentUrl(acordada) {
+    // Logic to determine the document URL based on the selected acordada
+    // This is a placeholder implementation
+    return 'path/to/document.pdf';
+}
+
+function getDocumentType(url) {
+    if (url.endsWith('.pdf')) {
+        return 'pdf';
+    } else if (url.endsWith('.xlsx')) {
+        return 'xlsx';
+    }
+    return null;
+}
+
+function parsePdfDocument(url) {
+    return new Promise((resolve, reject) => {
+        pdfjsLib.getDocument(url).promise
+            .then(pdf => {
+                let documentData = '';
+                const numPages = pdf.numPages;
+                let pagesPromises = [];
+
+                for (let i = 1; i <= numPages; i++) {
+                    pagesPromises.push(pdf.getPage(i).then(page => {
+                        return page.getTextContent().then(textContent => {
+                            textContent.items.forEach(item => {
+                                documentData += item.str + ' ';
+                            });
+                        });
+                    }));
+                }
+
+                Promise.all(pagesPromises).then(() => resolve(documentData)).catch(reject);
+            })
+            .catch(reject);
+    });
+}
+
+function parseXlsxDocument(url) {
+    return new Promise((resolve, reject) => {
+        fetch(url)
+            .then(response => response.arrayBuffer())
+            .then(data => {
+                const workbook = XLSX.read(data, { type: 'array' });
+                let documentData = '';
+                workbook.SheetNames.forEach(sheetName => {
+                    const sheet = workbook.Sheets[sheetName];
+                    documentData += XLSX.utils.sheet_to_csv(sheet);
+                });
+                resolve(documentData);
+            })
+            .catch(reject);
+    });
+}
+
+function searchExpedienteInDocument(documentData, numeroExpediente) {
+    // Logic to search for the expedition number in the document data
+    const lines = documentData.split('\n');
+    for (let line of lines) {
+        if (line.includes(numeroExpediente)) {
+            return line;
+        }
+    }
+    return null;
+}
